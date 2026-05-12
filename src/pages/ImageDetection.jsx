@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import BackLink from '../components/BackLink'
 import UploadArea from '../components/UploadArea'
+import CONFIG from '../config'
 
 export default function ImageDetection() {
   const [file, setFile] = useState(null)
@@ -19,7 +20,7 @@ export default function ImageDetection() {
       // The API expects 'video' as the key even for image analysis
       formData.append('video', file)
       
-      const response = await fetch('http://18.209.108.110:5000/analyze', {
+      const response = await fetch(`${CONFIG.API_BASE_URL}${CONFIG.ENDPOINTS.ANALYZE}`, {
         method: 'POST',
         body: formData,
       })

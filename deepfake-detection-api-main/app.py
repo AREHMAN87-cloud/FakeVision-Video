@@ -205,13 +205,13 @@ if __name__ == '__main__':
     
     print("\n" + "="*60)
     print("Starting Flask server...")
-    print("API will be available at: http://localhost:5000")
+    print("API will be available at: http://127.0.0.1:5000")
     print("API endpoints:")
     print("  - GET  /          : API info")
     print("  - GET  /health    : Health check")
-    print("  - POST /analyze   : Analyze video")
+    print("  - POST /analyze   : Analyze video/image")
     print("  - GET  /test      : Test endpoint")
     print("="*60 + "\n")
     
     # Run Flask app
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='127.0.0.1', port=5000, debug=True)

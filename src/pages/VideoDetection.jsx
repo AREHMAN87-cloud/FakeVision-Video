@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import BackLink from '../components/BackLink'
 import UploadArea from '../components/UploadArea'
+import CONFIG from '../config'
 
 export default function VideoDetection() {
   const [file, setFile] = useState(null)
@@ -19,8 +20,8 @@ export default function VideoDetection() {
       const formData = new FormData()
       formData.append('video', file)
       
-       // fakevision http responce
-      const response = await fetch('http://18.209.108.110:5000/analyze', {
+       // fakevision http response
+      const response = await fetch(`${CONFIG.API_BASE_URL}${CONFIG.ENDPOINTS.ANALYZE}`, {
         method: 'POST',
         body: formData,
       })
